@@ -100,15 +100,16 @@
 
             unityShowBanner('WebGL builds are not supported on mobile devices.');
 
-            // Set the canvas to portrait mode
-            canvas.style.width = "600px";  // Adjust the width as needed
-            canvas.style.height = "600px"; // Adjust the height as needed
-            canvas.style.transform = "rotate(90deg)";
-            canvas.style.transformOrigin = "top left";
+            // Set the canvas size to portrait mode
+            canvas.style.width = "100vw";
+            canvas.style.height = "100vh";
+            canvas.style.maxWidth = "100vh"; // Ensure it doesn't exceed the viewport height
+            canvas.style.transform = "rotate(90deg)"; // Rotate the canvas 90 degrees
+            canvas.style.transformOrigin = "top left"; // Set the rotation origin
         } else {
             // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-            canvas.style.width = "600px";
+            canvas.style.width = "960px";
             canvas.style.height = "600px";
         }
 
