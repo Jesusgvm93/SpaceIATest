@@ -1,7 +1,7 @@
 body { padding: 0; margin: 0 }
 #unity-container { position: absolute }
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
-#unity-container.unity-mobile { width: 100%; height: 100%;transform: rotate(90deg); transform-origin: left top;}      
+#unity-container.unity-mobile { width: 100%; height: 100%;}      
 #unity-canvas { background: #FFFFFF }
 .unity-mobile #unity-canvas { width: 100%; height: 100%;}
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
@@ -16,10 +16,11 @@ body { padding: 0; margin: 0 }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
 
 @media (max-width: 767px) {
-    body 
-    {
-        width: 100vw;
-        height: 100vh;
+    body {
+        transform: rotate(90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
         overflow-x: hidden;
         position: fixed;
         top: 100%;
@@ -29,8 +30,7 @@ body { padding: 0; margin: 0 }
 
 /* Deshabilitar la rotación del dispositivo */
 @media (max-width: 767px) {
-    body 
-    {
+    body {
         touch-action: none;
     }
 }
