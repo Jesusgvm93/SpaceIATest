@@ -85,14 +85,7 @@
         // the canvas DOM size and WebGL render target sizes yourself.
         // config.matchWebGLToCanvasSize = false;
 
-        if (window.innerWidth < window.innerHeight) {
-            var body = document.getElementsByTagName("body")[0];
-            body.style.transform = "rotate(90deg)";
-            body.style.transformOrigin = "top left";
-            body.style.width = window.innerHeight + "px";
-            body.style.height = window.innerWidth + "px";
-            body.style.overflow = "hidden";
-        }
+
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
