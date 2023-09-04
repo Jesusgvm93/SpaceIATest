@@ -1,16 +1,7 @@
 body { padding: 0; margin: 0 }
 #unity-container { position: absolute }
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
-    #unity-container.unity-mobile {
-        width: 100%;
-        height: 100%;
-        transform: rotate(90deg);
-        transform-origin: left top;
-        overflow-x: hidden;
-        position: fixed;
-        top: 100%;
-        left: 0;
-    }
+#unity-container.unity-mobile { width: 100%; height: 100%;transform: rotate(90deg); transform-origin: left top;}      
 #unity-canvas { background: #FFFFFF }
 .unity-mobile #unity-canvas { width: 100%; height: 100%;}
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
@@ -23,6 +14,18 @@ body { padding: 0; margin: 0 }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+
+@media (max-width: 767px) {
+    body 
+    {
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        position: fixed;
+        top: 100%;
+        left: 0;
+    }
+}
 
 /* Deshabilitar la rotación del dispositivo */
 @media (max-width: 767px) {
