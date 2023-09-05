@@ -42,10 +42,16 @@
             body {
                 background-color: #fff; /* Add any styling you want for landscape mode */
             }
+            #rotate-screen-message {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <div id="rotate-screen-message">
+        <p>Por favor, gire su dispositivo a modo paisaje para una mejor experiencia.</p>
+    </div>
     <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas" width=960 height=600></canvas>
         <div id="unity-loading-bar">
