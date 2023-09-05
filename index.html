@@ -34,11 +34,24 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-color: #191919
             }
-            #rotate-screen-message {
-                display: none;
+
+            .rotated-content {
+                transform: rotate(-90deg); /* Rotar el contenido en la dirección opuesta */
+                transform-origin: top left;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vh;
+                height: 100vw;
+                overflow: hidden; /* Ocultar el desbordamiento */
             }
+
+                .rotated-content img {
+                    width: 100%; /* Ajustar la imagen al ancho del contenedor */
+                    height: 100%; /* Ajustar la imagen al alto del contenedor */
+                    object-fit: cover; /* Escalar la imagen para cubrir todo el contenedor */
+                }
         }
 
         /* Landscape styles */
@@ -53,8 +66,8 @@
     </style>
 </head>
 <body>
-    <div id="rotate-screen-message">
-        <p>Por favor, gire su dispositivo a modo paisaje para una mejor experiencia.</p>
+    <div class="rotated-content">
+        <img id="unity-fullscreen-button">
     </div>
     <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas" width=960 height=600></canvas>
