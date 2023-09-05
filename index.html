@@ -28,8 +28,11 @@
         @media (orientation: portrait) {
             body {
                 background-color: #f0f0f0; /* Add any styling you want for portrait mode */
-                background-image: url("TemplateData/rotate.png");
+                background-image: url("TemplateData/please-rotate.png");
                 background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed; /* Esto evita que la imagen se desplace con el contenido */
+                background-size: cover;
             }
 
             #unity-container {
