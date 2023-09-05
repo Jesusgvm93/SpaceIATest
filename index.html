@@ -92,7 +92,7 @@
 
             if (window.matchMedia("(orientation: portrait)").matches)
             {
-                //unityShowBanner('Portrait');
+                unityShowBanner('Portrait');
                 //screen.orientation.lock("landscape");
                 if (window.orientation === 0 || window.orientation === 180) {
                     // La orientación actual es retrato, cambiamos a paisaje
@@ -103,16 +103,14 @@
             else if (window.matchMedia("(orientation: landscape)").matches)
             {
                 unityShowBanner('Landscape');
+                var meta = document.createElement('meta');
+                meta.name = 'viewport';
+                meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, shrink-to-fit=yes';
+                document.getElementsByTagName('head')[0].appendChild(meta);
+                container.className = "unity-mobile";
+                canvas.className = "unity-mobile";
+
             }
-
-
-            var meta = document.createElement('meta');
-            meta.name = 'viewport';
-            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, shrink-to-fit=yes';
-            document.getElementsByTagName('head')[0].appendChild(meta);
-            container.className = "unity-mobile";
-            canvas.className = "unity-mobile";
-
             // To lower canvas resolution on mobile devices to gain some
             // performance, uncomment the following line:
             // config.devicePixelRatio = 1;
