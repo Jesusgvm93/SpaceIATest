@@ -90,6 +90,11 @@
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
 
+            if (window.matchMedia("(orientation: portrait)").matches)
+            {
+                unityShowBanner('Portrait');
+            }
+
             var meta = document.createElement('meta');
             meta.name = 'viewport';
             meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, shrink-to-fit=yes';
@@ -101,7 +106,7 @@
             // performance, uncomment the following line:
             // config.devicePixelRatio = 1;
 
-            unityShowBanner('WebGL builds are not supported on mobile devices.');
+            //unityShowBanner('WebGL builds are not supported on mobile devices.');
         } else {
             // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
