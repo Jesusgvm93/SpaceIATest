@@ -36,22 +36,10 @@
                 left: 0;
             }
 
-            .rotated-content {
-                transform: rotate(-90deg); /* Rotar el contenido en la dirección opuesta */
-                transform-origin: top left;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vh;
-                height: 100vw;
-                overflow: hidden; /* Ocultar el desbordamiento */
+            .rotated-content img {
+                max-width: 100%; /* Evitar que la imagen sea más grande que su contenedor */
+                max-height: 100%; /* Evitar que la imagen sea más alta que su contenedor */
             }
-
-                .rotated-content img {
-                    width: 100%; /* Ajustar la imagen al ancho del contenedor */
-                    height: 100%; /* Ajustar la imagen al alto del contenedor */
-                    object-fit: cover; /* Escalar la imagen para cubrir todo el contenedor */
-                }
         }
 
         /* Landscape styles */
@@ -131,7 +119,6 @@
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
-            unityShowBanner('Please rotate your phone for landscape mode.');
             container.className = "unity-mobile";
             canvas.className = "unity-mobile";
             // To lower canvas resolution on mobile devices to gain some
