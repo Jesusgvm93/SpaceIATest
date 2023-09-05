@@ -29,7 +29,7 @@
         <div id="unity-warning"> </div>
         <div id="unity-footer">
             <!--<div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>-->
+            <div id="unity-fullscreen-button"></div>-->
             <!--<div id="unity-build-title">SOS</div>-->
         </div>
     </div>
@@ -78,54 +78,17 @@
             showBanner: unityShowBanner,
         };
 
-        // By default Unity keeps WebGL canvas render target size matched with
-        // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-        // Set this to false if you want to decouple this synchronization from
-        // happening inside the engine, and you would instead like to size up
-        // the canvas DOM size and WebGL render target sizes yourself.
-        // config.matchWebGLToCanvasSize = false;
-
-
-
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
-
-            if (window.matchMedia("(orientation: portrait)").matches)
-            {
-                unityShowBanner('Portrait');
-                unityShowBanner('Please rotate your phone');
-                //screen.orientation.lock("landscape");
-                //if (window.orientation === 0 || window.orientation === 180) {
-                //    // La orientación actual es retrato, cambiamos a paisaje
-                //    screen.orientation.lock("landscape");
-                //}
-                var meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, height=device-height, initial-scale=0.5, user-scalable=yes, shrink-to-fit=yes';
-                document.getElementsByTagName('head')[0].appendChild(meta);
-                container.className = "unity-mobile";
-                canvas.className = "unity-mobile";
-            }
-
-            else if (window.matchMedia("(orientation: landscape)").matches)
-            {
-                unityShowBanner('Landscape');
-                var meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes, shrink-to-fit=yes';
-                document.getElementsByTagName('head')[0].appendChild(meta);
-                container.className = "unity-mobile";
-                canvas.className = "unity-mobile";
-                screen.orientation.lock("landscape");
-            }
-            // To lower canvas resolution on mobile devices to gain some
-            // performance, uncomment the following line:
-            // config.devicePixelRatio = 1;
-
-            //unityShowBanner('WebGL builds are not supported on mobile devices.');
+            unityShowBanner('Landscape');
+            var meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, initial-scale=1.0, user-scalable=yes, shrink-to-fit=yes, orientation=landscape';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+            container.className = "unity-mobile";
+            canvas.className = "unity-mobile";
         } else {
             // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
             canvas.style.width = "960px";
             canvas.style.height = "600px";
         }
