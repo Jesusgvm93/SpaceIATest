@@ -93,6 +93,7 @@
             if (window.matchMedia("(orientation: portrait)").matches)
             {
                 unityShowBanner('Portrait');
+                screen.orientation.lock("landscape");
             }
 
             else if (window.matchMedia("(orientation: landscape)").matches)
