@@ -27,7 +27,11 @@
         /* Portrait styles */
         @media (orientation: portrait) {
             body {
-                transform: rotate(90deg); /* Rotate the entire page 90 degrees */
+                background-color: #f0f0f0; /* Add any styling you want for portrait mode */
+            }
+
+            #unity-container {
+                transform: rotate(90deg); /* Rotate the Unity content 90 degrees */
                 transform-origin: top left; /* Rotate around the top left corner */
                 width: 100vh; /* Use viewport height as width to fill the screen */
                 height: 100vw; /* Use viewport width as height to fill the screen */
@@ -35,11 +39,6 @@
                 top: 0;
                 left: 0;
             }
-
-            /*.rotated-content img {
-                max-width: 100%;*/ /* Evitar que la imagen sea más grande que su contenedor */
-                /*max-height: 100%;*/ /* Evitar que la imagen sea más alta que su contenedor */
-            /*}*/
         }
 
         /* Landscape styles */
@@ -47,9 +46,12 @@
             body {
                 background-color: #fff; /* Add any styling you want for landscape mode */
             }
-            /*#rotate-screen-message {
-                display: none;
-            }*/
+
+            #unity-container {
+                transform: none; /* Reset rotation in landscape mode */
+                width: 100%; /* Allow content to take full width */
+                height: 100%; /* Allow content to take full height */
+            }
         }
     </style>
 </head>
