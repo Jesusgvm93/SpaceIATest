@@ -36,6 +36,20 @@
                 left: 0;
             }
 
+            .rotated-content {
+                transform: rotate(-90deg);
+                transform-origin: top left;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vh;
+                height: 100vw;
+                display: flex;
+                justify-content: center; /* Centrar horizontalmente */
+                align-items: center; /* Centrar verticalmente */
+                overflow: hidden; /* Ocultar el desbordamiento */
+            }
+
             .rotated-content img {
                 max-width: 100%; /* Evitar que la imagen sea más grande que su contenedor */
                 max-height: 100%; /* Evitar que la imagen sea más alta que su contenedor */
